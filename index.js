@@ -12,7 +12,7 @@ const promptManager = () => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log("Please enter the team manager's name!");
+                    console.log("Please enter a name!");
                     return false;
                 }
             }
@@ -25,7 +25,7 @@ const promptManager = () => {
                 if (idInput) {
                     return true;
                 } else {
-                    console.log("Please enter the employee ID!");
+                    console.log("Please enter an employee ID!");
                     return false;
                 }
             }
@@ -51,13 +51,13 @@ const promptManager = () => {
                 if (emailInput) {
                     return true;
                 } else {
-                    console.log("Please enter work email address!");
+                    console.log("Please enter an office number!");
                     return false;
                 }
             }
         },
         
-    ]);
+    ])
 }
 
 const createTeam = () => {
@@ -66,7 +66,7 @@ const createTeam = () => {
             type: 'checkbox',
             name: 'add',
             message: "Please choose from the following options.",
-            choices:['Add an Engineer','Add an Intern','Create Team']
+            choices: ['Add an Engineer', 'Add an Intern', 'Create Team']
         },
     ]).then(response => {
         switch (response) {
@@ -79,7 +79,7 @@ const createTeam = () => {
     })
 }
 
-const getEngineer=() => {
+const getEngineer= () => {
     inquirer.prompt([
         { 
             type: 'input',
@@ -95,4 +95,4 @@ const getEngineer=() => {
 }
     
 
-promptManager();
+promptManager().then(createTeam);
